@@ -9,7 +9,7 @@ import nodemailer from "nodemailer";
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "devanshchaturvedi273@gmail.com",
+    user: "engineeringdraft@gmail.com",
     pass: process.env.GOOGLE_APP_PASSWORD,
   },
 });
