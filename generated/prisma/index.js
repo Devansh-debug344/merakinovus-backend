@@ -142,6 +142,10 @@ const config = {
         "fromEnvVar": null,
         "value": "windows",
         "native": true
+      },
+      {
+        "fromEnvVar": null,
+        "value": "debian-openssl-3.0.x"
       }
     ],
     "previewFeatures": [],
@@ -168,8 +172,8 @@ const config = {
       }
     }
   },
-  "inlineSchema": "generator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel contact_messages {\n  id         Int       @id @default(autoincrement())\n  name       String\n  email      String\n  message    String\n  created_at DateTime? @default(now()) @db.Timestamp(6)\n}\n",
-  "inlineSchemaHash": "e727f9c761b5913572cdb785836ee8ecb0b71851474a3e535ab4e246236b8cae",
+  "inlineSchema": "generator client {\n  provider      = \"prisma-client-js\"\n  output        = \"../generated/prisma\"\n  binaryTargets = [\"native\", \"debian-openssl-3.0.x\"]\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel contact_messages {\n  id         Int       @id @default(autoincrement())\n  name       String\n  email      String\n  message    String\n  created_at DateTime? @default(now()) @db.Timestamp(6)\n}\n",
+  "inlineSchemaHash": "3e0de7b7951e099cb226adee6503634346a2b70ea098abb290e68fee5eb7ab62",
   "copyEngine": true
 }
 
@@ -210,6 +214,10 @@ Object.assign(exports, Prisma)
 // file annotations for bundling tools to include these files
 path.join(__dirname, "query_engine-windows.dll.node");
 path.join(process.cwd(), "generated/prisma/query_engine-windows.dll.node")
+
+// file annotations for bundling tools to include these files
+path.join(__dirname, "libquery_engine-debian-openssl-3.0.x.so.node");
+path.join(process.cwd(), "generated/prisma/libquery_engine-debian-openssl-3.0.x.so.node")
 // file annotations for bundling tools to include these files
 path.join(__dirname, "schema.prisma");
 path.join(process.cwd(), "generated/prisma/schema.prisma")
